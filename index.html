@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NONFICTION Portfolio</title>
+    <title>NONFICTION MINHA Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/cart.css?v=20261023-2" />
   </head>
   <body>
     <div class="header-wrapper">
@@ -27,54 +28,49 @@
 
       <header class="header">
         <h1 class="logo">
-          <span>
-            <a href="#">
-              <svg
-                id="custom_logo"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1080 1080"
-                width="100%"
-              >
-                <style>
-                  .circle-text {
-                    font-family: "Times New Roman", Times, serif;
-                    font-size: 185px;
-                    font-weight: bold;
-                    letter-spacing: 40px;
-                  }
-                </style>
-                <circle
-                  cx="540"
-                  cy="540"
-                  r="525"
-                  fill="none"
-                  stroke="#ffffff"
-                  stroke-width="15"
-                />
-                <circle
-                  cx="540"
-                  cy="540"
-                  r="500"
-                  fill="none"
-                  stroke="#ffffff"
-                  stroke-width="2"
+          <a href="index.html" aria-label="NONFICTION MINHA 홈으로 이동">
+            <svg
+              id="custom-logo"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 120 120"
+              role="img"
+              aria-labelledby="custom-logo-title"
+            >
+              <title id="custom-logo-title">NONFICTION MINHA</title>
+              <defs>
+                <path
+                  id="logo-top-path"
+                  d="M 16,62 A 44,44 0 0,1 104,62"
                 />
                 <path
-                  id="textCirclePath"
-                  d="M 540, 160 A 380, 380 0 1, 1 539.9, 160"
-                  fill="none"
+                  id="logo-bottom-path"
+                  d="M 18,68 A 42,42 0 0,0 102,68"
                 />
-                <text class="circle-text">
-                  <textPath href="#textCirclePath" startOffset="0%">
-                    NONFICTION
-                  </textPath>
-                </text>
-              </svg>
-            </a>
-          </span>
+              </defs>
+              <circle class="logo-ring" cx="60" cy="60" r="53" />
+              <text class="circle-text circle-text--top">
+                <textPath
+                  href="#logo-top-path"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  NONFICTION
+                </textPath>
+              </text>
+              <text class="circle-text circle-text--bottom">
+                <textPath
+                  href="#logo-bottom-path"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  MINHA
+                </textPath>
+              </text>
+            </svg>
+          </a>
         </h1>
 
-        <nav class="main-menu">
+        <nav class="main-menu" id="main-menu" aria-label="주요 메뉴">
           <ul>
             <li><a href="#">NEW</a></li>
             <li><a href="#">Best Seller</a></li>
@@ -306,10 +302,23 @@
             </li>
           </ul>
         </nav>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
         <div class="user-icons">
-          <a href="#">
+          <a href="#" aria-label="검색">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -323,9 +332,11 @@
             </svg>
           </a>
 
-          <a href="#">
+          <a href="#" aria-label="언어 선택">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -339,9 +350,11 @@
             </svg>
           </a>
 
-          <a href="#">
+          <a href="#" aria-label="로그인">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -355,9 +368,17 @@
             </svg>
           </a>
 
-          <a href="#">
+          <button
+            class="main-cart-trigger"
+            type="button"
+            aria-label="장바구니 열기"
+            aria-controls="cart-dialog"
+            data-cart-trigger
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -369,7 +390,8 @@
                 d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
               />
             </svg>
-          </a>
+            <span class="cart-count" aria-label="장바구니 상품 수">0</span>
+          </button>
         </div>
       </header>
     </div>
@@ -430,126 +452,14 @@
 
       <section class="product-section">
         <div class="product-content-wrapper">
-          <div class="product-grid">
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_1.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_1.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">[LIMITED] 네롤리 드림 썸머 파우치 세트</div>
-                <div class="desc">네롤리 | 오렌지 블라썸 | 뮤게 | 머스크</div>
-                <div class="capacity">30mlx1,10mlx1</div>
-                <div class="price">68,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_2.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_2.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">네롤리 드림 헤어 세럼 미스트</div>
-                <div class="desc">네롤리 | 오렌지 블라썸 | 뮤게 | 머스크</div>
-                <div class="capacity">100ml</div>
-                <div class="price">49,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_3.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">네롤리 드림 오 드 퍼퓸</div>
-                <div class="desc">네롤리 | 오렌지 블라썸 | 뮤게 | 머스크</div>
-                <div class="capacity">50ml</div>
-                <div class="price">148,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_4.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_4.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">시트러스 핸드 크림 미니 트리오</div>
-                <div class="desc">핸드 크림 시트러스 향 3종</div>
-                <div class="capacity">15mlx3</div>
-                <div class="price">34,000원</div>
-              </div>
-            </div>
+          <div
+            class="product-grid"
+            id="new-product-grid"
+            aria-label="네롤리 드림 상품 목록"
+          >
+            <noscript>
+              <p>상품 목록을 보려면 JavaScript를 켜 주세요.</p>
+            </noscript>
           </div>
         </div>
       </section>
@@ -680,130 +590,14 @@
       </section>
       <section class="product-section">
         <div class="product-content-wrapper">
-          <div class="product-grid">
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_5.jpg"
-                  class="default-img"
-                  alt="듀 앤 라이트 오 드 퍼퓸 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">듀 앤 라이트 오 드 퍼퓸</div>
-                <div class="desc">
-                  피오니 | 페어 | 화이트 모스 | 아키갈라우드
-                </div>
-                <div class="capacity">50ml</div>
-                <div class="price">178,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_6.jpg"
-                  class="default-img"
-                  alt="티어스 인 레인 오 드 퍼퓸 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">티어스 인 레인 오 드 퍼퓸</div>
-                <div class="desc">오크우드 | 제라늄 | 베르가못 | 패출리</div>
-                <div class="capacity">50ml</div>
-                <div class="price">178,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_7.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">듀 앤 라이트 오 드 퍼퓸</div>
-                <div class="desc">
-                  피오니 | 페어 | 화이트 모스 | 아키갈라우드
-                </div>
-                <div class="capacity">100ml</div>
-                <div class="price">235,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_8.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">티어스 인 레인 오 드 퍼퓸</div>
-                <div class="desc">오크우드 | 제라늄 | 베르가못 | 패출리</div>
-                <div class="capacity">100ml</div>
-                <div class="price">235,000원</div>
-              </div>
-            </div>
+          <div
+            class="product-grid"
+            id="perfume-product-grid"
+            aria-label="오 드 퍼퓸 상품 목록"
+          >
+            <noscript>
+              <p>오 드 퍼퓸 상품 목록을 보려면 JavaScript를 켜 주세요.</p>
+            </noscript>
           </div>
         </div>
       </section>
@@ -828,135 +622,6 @@
         </div>
       </section>
 
-      <section class="product-section">
-        <div class="product-content-wrapper">
-          <div class="product-grid">
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_5.jpg"
-                  class="default-img"
-                  alt="듀 앤 라이트 오 드 퍼퓸 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">듀 앤 라이트 오 드 퍼퓸</div>
-                <div class="desc">
-                  피오니 | 페어 | 화이트 모스 | 아키갈라우드
-                </div>
-                <div class="capacity">50ml</div>
-                <div class="price">178,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_6.jpg"
-                  class="default-img"
-                  alt="티어스 인 레인 오 드 퍼퓸 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">티어스 인 레인 오 드 퍼퓸</div>
-                <div class="desc">오크우드 | 제라늄 | 베르가못 | 패출리</div>
-                <div class="capacity">50ml</div>
-                <div class="price">178,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_7.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">듀 앤 라이트 오 드 퍼퓸</div>
-                <div class="desc">
-                  피오니 | 페어 | 화이트 모스 | 아키갈라우드
-                </div>
-                <div class="capacity">100ml</div>
-                <div class="price">235,000원</div>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="img-box">
-                <img
-                  src="images/products/product_default_8.jpg"
-                  class="default-img"
-                  alt="기본 상품"
-                />
-                <img
-                  src="images/products/product_hover_3.jpg"
-                  class="hover-img"
-                  alt="호버 상품"
-                />
-                <button class="btn-like">
-                  <img
-                    src="images/icons/icon_heart.png"
-                    alt="좋아요 아이콘"
-                    width="15"
-                    height="15"
-                  />
-                </button>
-                <button class="btn-cart">장바구니 담기</button>
-              </div>
-              <div class="info-box">
-                <div class="name">티어스 인 레인 오 드 퍼퓸</div>
-                <div class="desc">오크우드 | 제라늄 | 베르가못 | 패출리</div>
-                <div class="capacity">100ml</div>
-                <div class="price">235,000원</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -1017,7 +682,30 @@
       </div>
     </footer>
 
+    <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-panel">
+        <div class="cart-header">
+          <h2 id="cart-title">장바구니</h2>
+          <button class="cart-close" type="button" aria-label="장바구니 닫기">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-summary">
+          <div>
+            <span>합계</span>
+            <strong id="cart-total">0원</strong>
+          </div>
+          <button class="cart-checkout" type="button">주문서로 이동</button>
+          <button class="cart-clear" type="button">장바구니 비우기</button>
+        </div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/products.js?v=20261023-2"></script>
+    <script src="js/cart.js?v=20261023-2"></script>
+    <script src="js/main.js?v=20261023-2"></script>
     <script>
       new Swiper(".mySwiper", {
         rewind: true,
@@ -1041,6 +729,47 @@
         }
       });
 
+      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      const mainMenu = document.querySelector("#main-menu");
+
+      function closeMobileMenu() {
+        mainMenu.classList.remove("is-open");
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+        mobileMenuToggle.setAttribute("aria-label", "메뉴 열기");
+        headerWrapper.classList.remove("menu-active");
+        document.body.classList.remove("menu-open");
+      }
+
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = mainMenu.classList.toggle("is-open");
+        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileMenuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "메뉴 닫기" : "메뉴 열기",
+        );
+        headerWrapper.classList.toggle("menu-active", isOpen);
+        document.body.classList.toggle("menu-open", isOpen);
+      });
+
+      mainMenu.addEventListener("click", (event) => {
+        if (event.target.closest("a") && window.innerWidth <= 767) {
+          closeMobileMenu();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeMobileMenu();
+          mobileMenuToggle.focus();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 767) {
+          closeMobileMenu();
+        }
+      });
+
       const perfumeData = [
         {
           enName: "DEW & LIGHT",
@@ -1049,6 +778,7 @@
           note: "피오니 | 페어 | 화이트 모스 | 아키갈라우드",
           bgImg: "slide_banner_1.jpg",
           productImg: "slide_prduct_1.jpg",
+          detailUrl: "detail.html?product=dew-and-light&option=50",
         },
         {
           enName: "TEARS IN RAIN",
@@ -1057,6 +787,7 @@
           note: "오크우드 | 제라늄 | 베르가못 | 패출리",
           bgImg: "slide_banner_2.jpg",
           productImg: "slide_prduct_2.jpg",
+          detailUrl: "detail.html?product=tears-in-rain&option=50",
         },
         {
           enName: "SANTAL CREAM",
@@ -1081,6 +812,7 @@
           note: "네롤리 | 오렌지 블러썸 | 뮤게 | 머스크",
           bgImg: "slide_banner_5.jpg",
           productImg: "slide_prduct_5.jpg",
+          detailUrl: "detail.html?product=neroli-dream&option=50",
         },
         {
           enName: "THE BEIGE",
@@ -1134,7 +866,7 @@
           <h4>${item.note}</h4>
         </div>
         
-        <a href="#" class="btn-more">제품 보러가기</a>
+        <a href="${item.detailUrl || "#"}" class="btn-more">제품 보러가기</a>
       </div>
     </div>
   `;

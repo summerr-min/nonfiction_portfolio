@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="page-description"
+      name="description"
+      content="티어스 인 레인 오 드 퍼퓸의 용량과 수량을 선택하고 장바구니에 담아보는 포트폴리오용 상품 상세 페이지입니다."
+    />
+    <title>티어스 인 레인 오 드 퍼퓸 | NONFICTION MINHA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/detail.css?v=20261023-2" />
+    <link rel="stylesheet" href="css/cart.css?v=20261023-2" />
+    <script src="js/products.js?v=20261023-2" defer></script>
+    <script src="js/cart.js?v=20261023-2" defer></script>
+    <script src="js/detail.js?v=20261023-2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#product-detail">상품 정보로 바로가기</a>
+
+    <div class="top-banner">
+      <p>PORTFOLIO DEMO · 실제 결제는 진행되지 않습니다.</p>
+    </div>
+
+    <header class="site-header">
+      <a
+        class="wordmark"
+        href="index.html"
+        aria-label="NONFICTION MINHA 메인으로 이동"
+      >
+        NONFICTION <span>MINHA</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span class="sr-only">메뉴 열기</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="주요 메뉴">
+        <a href="index.html">SHOP</a>
+        <a href="#product-detail">PERFUME</a>
+        <a href="#product-story" id="story-nav-link">STORY</a>
+        <a href="#recommendations">RECOMMEND</a>
+      </nav>
+
+      <button
+        class="cart-trigger"
+        type="button"
+        aria-controls="cart-dialog"
+        data-cart-trigger
+      >
+        CART
+        <span class="cart-count" aria-label="장바구니 상품 수">0</span>
+      </button>
+    </header>
+
+    <main>
+      <nav class="breadcrumb" aria-label="현재 위치">
+        <ol>
+          <li><a href="index.html">HOME</a></li>
+          <li><span aria-hidden="true">/</span> <span id="breadcrumb-category">PERFUME</span></li>
+          <li><span aria-hidden="true">/</span> <span id="breadcrumb-product">TEARS IN RAIN</span></li>
+        </ol>
+      </nav>
+
+      <section class="product-detail" id="product-detail" aria-labelledby="product-title">
+        <div class="product-gallery">
+          <div class="product-image-frame">
+            <img
+              id="product-image"
+              src="images/products/product_default_6.jpg"
+              alt="티어스 인 레인 오 드 퍼퓸 50mL"
+              width="2438"
+              height="2438"
+              fetchpriority="high"
+            />
+            <p class="image-label" id="image-label">50mL</p>
+          </div>
+          <p class="gallery-caption">
+            용량을 선택하면 상품 이미지와 가격이 함께 변경됩니다.
+          </p>
+        </div>
+
+        <div class="product-information">
+          <p class="product-type" id="product-type">EAU DE PARFUM</p>
+          <div class="title-row">
+            <h1 id="product-title">티어스 인 레인 오 드 퍼퓸</h1>
+            <button
+              class="wish-button"
+              type="button"
+              aria-pressed="false"
+              aria-label="관심 상품에 추가"
+            >
+              <span aria-hidden="true">♡</span>
+            </button>
+          </div>
+          <p class="product-price" id="product-price">178,000원</p>
+
+          <div class="scent-summary">
+            <p class="scent-keywords" id="product-keywords"></p>
+            <dl class="scent-notes" id="scent-notes"></dl>
+            <p class="product-description" id="product-description"></p>
+          </div>
+
+          <form class="purchase-form" id="purchase-form">
+            <fieldset class="option-group">
+              <legend id="option-legend">용량 선택</legend>
+              <div class="size-options" id="size-options"></div>
+            </fieldset>
+
+            <div class="field-group">
+              <label for="message-card">메시지 카드 <span>(선택)</span></label>
+              <select id="message-card" name="messageCard">
+                <option value="선택 안 함">선택 안 함</option>
+                <option value="Thank you">Thank you</option>
+                <option value="Happy Birthday">Happy Birthday</option>
+                <option value="Congratulations">Congratulations</option>
+              </select>
+            </div>
+
+            <div class="quantity-row">
+              <span class="quantity-label" id="quantity-label">수량</span>
+              <div class="quantity-control" role="group" aria-labelledby="quantity-label">
+                <button class="quantity-button" type="button" data-action="decrease">
+                  <span aria-hidden="true">−</span>
+                  <span class="sr-only">수량 줄이기</span>
+                </button>
+                <input
+                  id="quantity"
+                  name="quantity"
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="10"
+                  inputmode="numeric"
+                  aria-label="상품 수량"
+                />
+                <button class="quantity-button" type="button" data-action="increase">
+                  <span aria-hidden="true">+</span>
+                  <span class="sr-only">수량 늘리기</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="total-row">
+              <span>총 상품금액</span>
+              <output id="total-price" for="quantity">178,000원</output>
+            </div>
+
+            <div class="purchase-actions">
+              <button class="button button--outline" id="add-to-cart" type="submit">
+                장바구니에 담기
+              </button>
+              <button class="button button--filled" id="demo-buy" type="button">
+                구매하기
+              </button>
+            </div>
+            <p class="demo-notice">
+              포트폴리오 데모 페이지로 장바구니까지만 동작하며 실제 결제는 진행되지 않습니다.
+            </p>
+          </form>
+
+          <div class="product-accordions">
+            <details>
+              <summary>제품 정보</summary>
+              <p id="product-info-copy"></p>
+            </details>
+            <details>
+              <summary>사용 및 주의사항</summary>
+              <p id="product-usage-copy"></p>
+            </details>
+            <details>
+              <summary>배송 안내</summary>
+              <p id="product-shipping-copy"></p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefit-section" aria-labelledby="benefit-title">
+        <div>
+          <p class="section-kicker">ONLINE BENEFIT</p>
+          <h2 id="benefit-title">공식 온라인 스토어 혜택</h2>
+        </div>
+        <ul>
+          <li><span>01</span> 회원가입 시 10% 쿠폰</li>
+          <li><span>02</span> 카카오 친구 추가 시 5% 할인</li>
+          <li><span>03</span> 전 상품 무료 배송</li>
+        </ul>
+      </section>
+
+      <section class="product-story" id="product-story" aria-labelledby="story-title">
+        <div class="story-image">
+          <img
+            id="story-image"
+            src="images/banners/slide_banner_2.jpg"
+            alt="비 내린 숲을 연상시키는 티어스 인 레인 향 이미지"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          />
+        </div>
+        <div class="story-copy">
+          <p class="section-kicker" id="story-kicker">SCENT STORY</p>
+          <h2 id="story-title">TEARS IN RAIN</h2>
+          <p id="story-copy"></p>
+        </div>
+      </section>
+
+      <section class="recommendations" id="recommendations" aria-labelledby="recommend-title">
+        <div class="section-heading">
+          <p class="section-kicker">YOU MAY ALSO LIKE</p>
+          <h2 id="recommend-title">추천 상품</h2>
+        </div>
+        <div class="recommend-grid" id="recommend-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="wordmark">NONFICTION <span>MINHA</span></p>
+        <p>학습을 위한 비상업적 클론 코딩 포트폴리오입니다.</p>
+      </div>
+      <a href="index.html">메인으로 돌아가기</a>
+    </footer>
+
+    <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-panel">
+        <div class="cart-header">
+          <h2 id="cart-title">장바구니</h2>
+          <button class="cart-close" type="button" aria-label="장바구니 닫기">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-summary">
+          <div>
+            <span>합계</span>
+            <strong id="cart-total">0원</strong>
+          </div>
+          <button class="button button--filled cart-checkout" type="button">
+            주문서로 이동
+          </button>
+          <button class="cart-clear" type="button">장바구니 비우기</button>
+        </div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="mobile-purchase-bar" aria-label="모바일 구매 메뉴">
+      <div>
+        <span id="mobile-option">50mL · 1개</span>
+        <strong id="mobile-total">178,000원</strong>
+      </div>
+      <button type="button" id="mobile-add-to-cart">담기</button>
+    </div>
+  </body>
+</html>
