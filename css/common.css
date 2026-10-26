@@ -169,7 +169,8 @@ body.menu-open {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.has-dropdown:hover .sub-menu {
+.has-dropdown:hover .sub-menu,
+.has-dropdown:focus-within .sub-menu {
   display: grid;
   grid-template-columns: 1fr repeat(3, 347px);
   gap: 10px;
@@ -209,7 +210,8 @@ body.menu-open {
   height: 100%;
   object-fit: cover;
 }
-.by-scent-menu:hover .sub-menu {
+.by-scent-menu:hover .sub-menu,
+.by-scent-menu:focus-within .sub-menu {
   grid-template-columns: 1fr repeat(5, 203px);
 }
 

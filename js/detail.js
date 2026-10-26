@@ -427,6 +427,8 @@ window.addEventListener("resize", () => {
 
   elements.menuToggle.setAttribute("aria-expanded", "false");
 
+  elements.menuToggle.querySelector(".sr-only").textContent = "메뉴 열기";
+
   document.body.classList.remove("menu-open");
 });
 
